@@ -1,3 +1,4 @@
+
 body {
     background-image: url("../img/android-pedra-papel-tesoura.jpg");
     background-repeat: no-repeat;
@@ -20,7 +21,6 @@ body {
         opacity: 0.7;
     }
     body .CardsContainer{
-        border: 2px solid red;
         width: 88vw;
         height:45vh;
         display: flex;
@@ -30,18 +30,15 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: rgba(255, 255, 240, 0.363);
-        
     }
-        body .CardsContainer #PedraContainer{
-
-        }
         body .CardsContainer .cards{
             display: flex;
             margin: 20px;
         }
         body .CardsContainer .cards:hover{
             cursor:pointer;
-
+            position: relative;
+            bottom:20%;
         }
         body .CardsContainer .icons{
             position: relative;
@@ -54,6 +51,9 @@ body {
         body .CardsContainer .cards #tesoura{
             margin-left: 8%;
         }
-        
+.display{
+    display:none;
+}
+
         
         
