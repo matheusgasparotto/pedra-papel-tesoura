@@ -20,6 +20,12 @@ body {
         border-radius: 40px;
         opacity: 0.7;
     }
+    body .Button:hover{
+        background-color: rgb(71, 71, 71);
+        cursor:pointer;
+        color:#fff;
+        opacity: 1;        
+    }
     body .CardsContainer{
         width: 88vw;
         height:45vh;
@@ -30,27 +36,37 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: rgba(255, 255, 240, 0.363);
+        border-radius: 10px;
     }
+    
         body .CardsContainer .cards{
             display: flex;
-            margin: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            align-items: center;
+        }
+        body .CardsContainer .cardsBattle{
+            display: flex;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            align-items: center;
         }
         body .CardsContainer .cards:hover{
             cursor:pointer;
             position: relative;
             bottom:20%;
         }
-        body .CardsContainer .icons{
-            position: relative;
-            right: 27vw;
-        }
         body .CardsContainer .cards img{
             width: 100%;
             height: 100%;
         }
-        body .CardsContainer .cards #tesoura{
-            margin-left: 8%;
+        body .CardsContainer .cardsBattle img{
+            width: 100%;
+            height: 100%;
         }
+
 .display{
     display:none;
 }
