@@ -38,7 +38,12 @@ body {
         background-color: rgba(255, 255, 240, 0.363);
         border-radius: 10px;
     }
-    
+    body .fogos{
+        position: absolute;
+        z-index: 2;
+        width: 20%;
+        left: 40%;
+    }
         body .CardsContainer .cards{
             display: flex;
             font-size: 40px;

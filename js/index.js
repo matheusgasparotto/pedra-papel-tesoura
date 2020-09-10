@@ -42,7 +42,9 @@ Pedra.onclick = function (){
         Result.textContent = 'Você Perdeu'
     }
     if (Computer === cardsArray[2]) {
-       Result.textContent = 'Você Venceu'        
+       Result.textContent = 'Você Venceu' 
+       let fogos = document.getElementById('fogos')
+       fogos.classList.remove('display')       
     }
 
     let ButtonJogarNovamente = document.createElement('button')
@@ -87,7 +89,9 @@ Papel.onclick = function (){
         Result.textContent = 'Você Perdeu'
     }
     if (Computer === cardsArray[0]) {
-       Result.textContent = 'Você Venceu'        
+       Result.textContent = 'Você Venceu' 
+       let fogos = document.getElementById('fogos')
+       fogos.classList.remove('display')          
     }
 
     let ButtonJogarNovamente = document.createElement('button')
@@ -132,7 +136,9 @@ Tesoura.onclick = function (){
         Result.textContent = 'Você Perdeu'
     }
     if (Computer === cardsArray[1]) {
-       Result.textContent = 'Você Venceu'        
+       Result.textContent = 'Você Venceu' 
+       let fogos = document.getElementById('fogos')
+       fogos.classList.remove('display')          
     }
 
     let ButtonJogarNovamente = document.createElement('button')
