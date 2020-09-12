@@ -50,6 +50,8 @@ body {
             font-weight: bold;
             text-align: center;
             align-items: center;
+            transition: all 1s;
+            bottom:0;
         }
         body .CardsContainer .cardsBattle{
             display: flex;
