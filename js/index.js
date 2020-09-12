@@ -9,8 +9,11 @@ const Pedra = document.getElementById('PedraContainer')
 const Papel = document.getElementById('PapelContainer')
 const Tesoura = document.getElementById('TesouraContainer')
 const PedraClone = Pedra.cloneNode(true)
+PedraClone.classList.remove('cards')
 const PapelClone = Papel.cloneNode(true)
+PapelClone.classList.remove('cards')
 const TesouraClone = Tesoura.cloneNode(true)
+TesouraClone.classList.remove('cards')
 
 const cardsArray = [PedraClone, PapelClone, TesouraClone]
 let Computer = 0
@@ -22,7 +25,6 @@ function Battle(card) {
     document.body.appendChild(Battle)
     Battle.appendChild(card)
 
-
     CardsContainer.classList.add('cardsBattle')
     Battle.appendChild(CardsContainer)
 
@@ -32,9 +34,6 @@ function Battle(card) {
     Papel.classList.add('cardsBattle')
     Tesoura.classList.remove('cards')
     Tesoura.classList.add('cardsBattle')
-
-
-
 
     let number = Math.floor(Math.random() * (3 - 0))
     Computer = cardsArray[number]
@@ -51,53 +50,57 @@ function playAgain() {
     }
 }
 
-Pedra.onclick = function () {
-    Battle(Pedra)
+const cards = document.querySelectorAll('.cards')
 
-    if (Computer === cardsArray[0]) {
-        CardsContainer.textContent = 'Empate'
-    }
-    if (Computer === cardsArray[1]) {
-        CardsContainer.textContent = 'Você Perdeu'
-    }
-    if (Computer === cardsArray[2]) {
-        CardsContainer.textContent = 'Você Venceu'
-        let fogos = document.getElementById('fogos')
-        fogos.classList.remove('display')
-    }
+cards.forEach(element => {
+    element.addEventListener('click', WinCondition)
+})
 
-    playAgain()
-}
-Papel.onclick = function () {
-    Battle(Papel)
+function WinCondition(event) {
+    const card = event.target
+    
+    Battle(card)
 
-    if (Computer === cardsArray[1]) {
-        CardsContainer.textContent = 'Empate'
-    }
-    if (Computer === cardsArray[2]) {
-        CardsContainer.textContent = 'Você Perdeu'
-    }
-    if (Computer === cardsArray[0]) {
-        CardsContainer.textContent = 'Você Venceu'
-        let fogos = document.getElementById('fogos')
-        fogos.classList.remove('display')
+    if (card.id == 'pedra') {
+        if (Computer === cardsArray[0]) {
+            CardsContainer.textContent = 'Empate'
+        }
+        if (Computer === cardsArray[1]) {
+            CardsContainer.textContent = 'Você Perdeu'
+        }
+        if (Computer === cardsArray[2]) {
+            CardsContainer.textContent = 'Você Venceu'
+            let fogos = document.getElementById('fogos')
+            fogos.classList.remove('display')
+        }
     }
 
-    playAgain()
-}
-Tesoura.onclick = function () {
-    Battle(Tesoura)
+    if (card.id == 'papel') {
+        if (Computer === cardsArray[1]) {
+            CardsContainer.textContent = 'Empate'
+        }
+        if (Computer === cardsArray[2]) {
+            CardsContainer.textContent = 'Você Perdeu'
+        }
+        if (Computer === cardsArray[0]) {
+            CardsContainer.textContent = 'Você Venceu'
+            let fogos = document.getElementById('fogos')
+            fogos.classList.remove('display')
+        }
+    }
 
-    if (Computer === cardsArray[2]) {
-        CardsContainer.textContent = 'Empate'
-    }
-    if (Computer === cardsArray[0]) {
-        CardsContainer.textContent = 'Você Perdeu'
-    }
-    if (Computer === cardsArray[1]) {
-        CardsContainer.textContent = 'Você Venceu'
-        let fogos = document.getElementById('fogos')
-        fogos.classList.remove('display')
+    if (card.id == 'tesoura') {
+        if (Computer === cardsArray[2]) {
+            CardsContainer.textContent = 'Empate'
+        }
+        if (Computer === cardsArray[0]) {
+            CardsContainer.textContent = 'Você Perdeu'
+        }
+        if (Computer === cardsArray[1]) {
+            CardsContainer.textContent = 'Você Venceu'
+            let fogos = document.getElementById('fogos')
+            fogos.classList.remove('display')
+        }
     }
 
     playAgain()
