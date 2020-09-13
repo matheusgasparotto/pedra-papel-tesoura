@@ -14,12 +14,15 @@ let result = document.createElement('Div')
 
 let Computer = 0
 
+// Armazenar a jogada do computador.
 function Computerplay (){
     let number = Math.floor(Math.random() * (3 - 0))
     Computer = cards[number].cloneNode(true)
 }
 
+// Criando a batalha, colocando as Cards lado a lado.
 function Battle(card) {
+    //Trocando classes para tipo batalha, e pedurando jogada do player e div de resultado
     CardsContainer.classList.remove('display')
     CardsContainer.innerHTML = ''
     CardsContainer.classList.add('cardsBattle')
@@ -31,10 +34,11 @@ function Battle(card) {
         element.classList.remove('cards')
         element.classList.add('cardsBattle')
     })
-
+    //Pendurando jogada do computador.
     CardsContainer.appendChild(Computer)
 }
 
+//Criando botão de jogar novamente.
 function playAgain() {
     const ButtonJogarNovamente = document.createElement('button')
     ButtonJogarNovamente.classList.add('Button')
@@ -45,6 +49,7 @@ function playAgain() {
     }
 }
 
+// Incremento de condição de vitória, ja passando pelas fases de jogadas.
 function WinCondition(event) {
     Computerplay()
 
